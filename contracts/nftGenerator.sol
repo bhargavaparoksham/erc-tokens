@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import "./subcontracts/ERC721.sol";
+import "./subcontracts/ERC721URIStorage.sol";
 
 
 contract nftGenerator is ERC721URIStorage {
@@ -11,7 +11,7 @@ contract nftGenerator is ERC721URIStorage {
     address public Admin;
     uint256 public tokenCounter;
 
-    constructor() public ERC721 ("NFT Generator","NFTGen") {
+    constructor() ERC721 ("NFT Generator","NFTGen") {
         Admin = msg.sender;     
         tokenCounter = 0;
     }
